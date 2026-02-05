@@ -92,4 +92,4 @@ Where:
 
 ---
 
-*For detailed physics, derivations, and error analysis, please refer to the [Project Report](docs/U238DecayChain.pdf).*
+*For detailed physics, derivations, and error analysis, please refer to the [Project Report](https://github.com/EmreSakarya/uranium-decay-chain-analysis/blob/main/UraniumDecayChainAnalyse.pdf).*
