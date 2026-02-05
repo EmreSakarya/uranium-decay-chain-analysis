@@ -6,38 +6,41 @@
 
 ## ☢️ Project Overview
 
-[cite_start]This project provides a comprehensive computational analysis of the radioactive decay chain starting from **Uranium-238** and ending at the stable isotope **Lead-206**[cite: 25]. [cite_start]The study simulates the isotopic evolution over the age of the Earth (approx. 4.503 billion years)[cite: 40].
+This project provides a comprehensive computational analysis of the radioactive decay chain starting from **Uranium-238** and ending at the stable isotope **Lead-206**. The study simulates the isotopic evolution over the age of the Earth (approx. 4.503 billion years).
 
-[cite_start]The primary goal is to compare **Analytical** methods (exact solutions) with **Numerical** integration methods to demonstrate numerical stability challenges in "stiff" differential equations caused by vastly different half-lives[cite: 32].
+The primary goal is to compare **Analytical** methods (exact solutions) with **Numerical** integration methods to demonstrate numerical stability challenges in "stiff" differential equations caused by vastly different half-lives.
 
 ### 🔬 Key Features
-* [cite_start]**Analytical Solution:** Implementation of **Bateman Equations** for exact mass calculations[cite: 30].
+* **Analytical Solution:** Implementation of **Bateman Equations** for exact mass calculations.
 * **Numerical Analysis:**
-  * [cite_start]**Forward Euler (Explicit):** Demonstrates stability limitations when time steps ($\Delta t$) are large[cite: 17].
-  * [cite_start]**Implicit Euler (Fortran):** Provides a robust solution for stiff decay chains[cite: 17].
-* [cite_start]**Reverse Geochronology:** Calculates the initial U-238 mass at Earth's formation based on present-day Pb-206 abundance[cite: 15].
+  * **Forward Euler (Explicit):** Demonstrates stability limitations when time steps ($\Delta t$) are large.
+  * **Implicit Euler (Fortran):** Provides a robust solution for stiff decay chains.
+* **Reverse Geochronology:** Calculates the initial U-238 mass at Earth's formation based on present-day Pb-206 abundance.
 * **High Precision:** Uses `numpy.longdouble` in Python and `double precision` in Fortran to minimize floating-point errors.
 
 ---
 
 ## 📊 Visuals & Results
 
-[cite_start]The analysis includes logarithmic plots tracking the mass evolution of U-238, U-234, Th-230, Ra-226, Pb-210, and Pb-206[cite: 74].
+The analysis includes logarithmic plots tracking the mass evolution of U-238, U-234, Th-230, Ra-226, Pb-210, and Pb-206.
 
-[cite_start]The study highlights that while Uranium-238 decays slowly, intermediate isotopes like **Pb-210** (half-life approx. 22 years) require extremely small time steps or implicit methods for accurate numerical simulation[cite: 26, 237].
+![Decay Chain Graph](docs/graph_preview.png)
+
+The study highlights that while Uranium-238 decays slowly, intermediate isotopes like **Pb-210** (half-life approx. 22 years) require extremely small time steps or implicit methods for accurate numerical simulation.
 
 ---
 
 ## 📂 Project Structure
 
     uranium-decay-chain-analysis/
-    ├─── U238DecayChain.pdf       # Full Project Report & detailed graphs
-    │ 
+    ├── docs/
+    │   ├── U238DecayChain.pdf       # Full Project Report
+    │   └── graph_preview.png        # Preview image for README
     ├── src/
     │   ├── python/
     │   │   └── decay_chain_analytic.py  # Bateman & Forward Euler implementation
     │   └── fortran/
-    │       └── implicit_euler.f90       # Implicit Euler implementation (High Stability)
+    │       └── implicit_euler.f90       # Implicit Euler implementation
     └── README.md
 
 ---
@@ -65,24 +68,27 @@ This script runs the Implicit Euler method, which is stable even at large time s
 
 ## 🧮 Mathematical Background
 
-[cite_start]The decay chain is modeled using a system of first-order differential equations[cite: 52]:
+The decay chain is modeled using a system of first-order differential equations.
+
+
+The general equation for the decay rate is:
 
 $$\frac{dN_i}{dt} = \lambda_{i-1}N_{i-1} - \lambda_i N_i$$
 
 Where:
-* [cite_start]$\lambda$ is the decay constant ($\ln(2) / t_{1/2}$)[cite: 48].
+* $\lambda$ is the decay constant ($\ln(2) / t_{1/2}$).
 * $N$ is the number of atoms.
 
 **The Decay Chain:**
-[cite_start]`U-238` -> `U-234` -> `Th-230` -> `Ra-226` -> `Pb-210` -> `Pb-206 (Stable)`[cite: 13].
+`U-238` -> `U-234` -> `Th-230` -> `Ra-226` -> `Pb-210` -> `Pb-206 (Stable)`
 
 ---
 
 ## 👨‍💻 Author
 
-[cite_start]**Emre Sakarya** [cite: 8]
-* [cite_start]Hacettepe University, Department of Nuclear Engineering [cite: 1, 2]
-* [cite_start]Project: NEM 393 Engineering Project II [cite: 3]
+**Emre Sakarya**
+* Hacettepe University, Department of Nuclear Engineering
+* Project: NEM 393 Engineering Project II
 
 ---
 
